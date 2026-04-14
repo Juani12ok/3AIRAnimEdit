@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://n07meqw8dl55"]
+
+[ext_resource type="Script" uid="uid://bw1ciagnk14xs" path="res://scripts/settings.gd" id="1_knfua"]
+
+[node name="Settings" type="Control" unique_id=1904721704]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -898.0
+offset_bottom = -254.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_knfua")
+
+[node name="Top Bar" type="Panel" parent="." unique_id=1999612847]
+layout_mode = 0
+offset_right = 254.0
+offset_bottom = 40.0
+
+[node name="Title" type="Label" parent="Top Bar" unique_id=147675331]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 8.0
+offset_right = 158.0
+offset_bottom = 31.0
+text = "Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Top Bar" unique_id=1166120627]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 5.0
+offset_right = 26.0
+offset_bottom = 36.0
+scale = Vector2(-1, -1)
+pivot_offset = Vector2(11, 15.5)
+text = "➜"
+icon_alignment = 1
