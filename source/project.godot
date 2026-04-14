@@ -1,0 +1,35 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="3AIR Anim Edit"
+config/version="v1.0.0"
+run/main_scene="uid://7gicq4uabkaf"
+config/features=PackedStringArray("4.6", "Mobile")
+run/low_processor_mode=true
+config/icon="res://sheet.png"
+extras/using_desktop=false
+extras/using_desktop.pc=true
+extras/using_desktop.web=true
+
+[display]
+
+window/handheld/orientation=1
+mouse_cursor/custom_image="uid://bk6b08pw0fhtv"
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+rendering_device/driver.windows="d3d12"
+renderer/rendering_method="mobile"
