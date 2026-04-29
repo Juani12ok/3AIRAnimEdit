@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://n07meqw8dl55"]
 
 [ext_resource type="Script" uid="uid://bw1ciagnk14xs" path="res://scripts/settings.gd" id="1_knfua"]
+[ext_resource type="Texture2D" uid="uid://dxku02ydk73dm" path="res://icons/16x16/back.png" id="2_eewyj"]
 
 [node name="Settings" type="Control" unique_id=1904721704]
 layout_mode = 3
@@ -14,6 +15,7 @@ grow_vertical = 2
 script = ExtResource("1_knfua")
 
 [node name="Top Bar" type="Panel" parent="." unique_id=1999612847]
+texture_filter = 1
 layout_mode = 0
 offset_right = 254.0
 offset_bottom = 40.0
@@ -24,17 +26,14 @@ offset_left = 96.0
 offset_top = 8.0
 offset_right = 158.0
 offset_bottom = 31.0
-text = "Settings"
+text = "SETTING_TITLE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button" type="Button" parent="Top Bar" unique_id=1166120627]
+[node name="Go Back" type="TextureButton" parent="Top Bar" unique_id=543591147]
 layout_mode = 0
-offset_left = 4.0
-offset_top = 5.0
-offset_right = 26.0
-offset_bottom = 36.0
-scale = Vector2(-1, -1)
-pivot_offset = Vector2(11, 15.5)
-text = "➜"
-icon_alignment = 1
+offset_right = 20.0
+offset_bottom = 20.0
+scale = Vector2(2, 2)
+texture_normal = ExtResource("2_eewyj")
+stretch_mode = 0

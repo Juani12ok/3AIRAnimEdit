@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://7gicq4uabkaf"]
 
-[ext_resource type="Script" uid="uid://bh5jr08j2pjgp" path="res://scripts/main.gd" id="1_h2yge"]
+[ext_resource type="Script" uid="uid://bh5jr08j2pjgp" path="res://scripts/homeActivity.gd" id="1_h2yge"]
 [ext_resource type="Texture2D" uid="uid://dv5p7amcr21lu" path="res://icons/16x16/3AIR Sheet Mini Icons.png" id="1_ig7tw"]
 [ext_resource type="Texture2D" uid="uid://le00e5ttbr5k" path="res://icons/32x32/3AIR Sheet Icons.png" id="2_0xm2m"]
+[ext_resource type="Script" uid="uid://c4oxqi0fpbn1r" path="res://scripts/misc/background_update.gd" id="4_a5os8"]
+[ext_resource type="PackedScene" uid="uid://ogtcmx5ymiyw" path="res://addons/jts_colorpickerkit/plugin/color-picker.tscn" id="5_5rhg1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h2yge"]
 atlas = ExtResource("1_ig7tw")
@@ -48,13 +50,18 @@ offset_right = 254.0
 offset_bottom = 394.0
 script = ExtResource("1_h2yge")
 
-[node name="Top Bar" type="Panel" parent="." unique_id=332834618]
+[node name="Main UI" type="Control" parent="." unique_id=1578412582]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Top Bar" type="Panel" parent="Main UI" unique_id=332834618]
 texture_filter = 1
 layout_mode = 0
 offset_right = 254.0
 offset_bottom = 40.0
 
-[node name="Open Context Menu" type="TextureButton" parent="Top Bar" unique_id=1678982939]
+[node name="Open Context Menu" type="TextureButton" parent="Main UI/Top Bar" unique_id=1678982939]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -62,7 +69,7 @@ toggle_mode = true
 texture_normal = SubResource("AtlasTexture_h2yge")
 stretch_mode = 1
 
-[node name="Title" type="Label" parent="Top Bar" unique_id=1521765980]
+[node name="Title" type="Label" parent="Main UI/Top Bar" unique_id=1521765980]
 layout_mode = 0
 offset_left = 69.0
 offset_top = 8.0
@@ -71,7 +78,7 @@ offset_bottom = 31.0
 text = "3AIR Anim Edit"
 horizontal_alignment = 1
 
-[node name="Options" type="TextureButton" parent="Top Bar" unique_id=376218445]
+[node name="Options" type="TextureButton" parent="Main UI/Top Bar" unique_id=376218445]
 layout_mode = 0
 offset_left = 214.0
 offset_right = 254.0
@@ -80,47 +87,51 @@ toggle_mode = true
 texture_normal = SubResource("AtlasTexture_1bvp3")
 stretch_mode = 1
 
-[node name="Tabs" type="CanvasLayer" parent="." unique_id=348867499]
+[node name="Tabs" type="CanvasLayer" parent="Main UI" unique_id=348867499]
 
-[node name="Context Menu" type="Panel" parent="Tabs" unique_id=186608346]
+[node name="Context Menu" type="Panel" parent="Main UI/Tabs" unique_id=186608346]
 visible = false
 offset_left = 2.0
 offset_top = 41.0
 offset_right = 131.0
 offset_bottom = 85.0
 
-[node name="New File" type="Button" parent="Tabs/Context Menu" unique_id=1602674718]
+[node name="New File" type="Button" parent="Main UI/Tabs/Context Menu" unique_id=1602674718]
 layout_mode = 0
 offset_left = 2.0
 offset_top = 2.0
 offset_right = 42.0
 offset_bottom = 42.0
+disabled = true
 icon = SubResource("AtlasTexture_lquwl")
 
-[node name="Load File" type="Button" parent="Tabs/Context Menu" unique_id=78997531]
+[node name="Load File" type="Button" parent="Main UI/Tabs/Context Menu" unique_id=78997531]
 layout_mode = 0
 offset_left = 44.0
 offset_top = 2.0
 offset_right = 84.0
 offset_bottom = 42.0
+disabled = true
 icon = SubResource("AtlasTexture_7mycd")
+flat = true
 
-[node name="Save" type="Button" parent="Tabs/Context Menu" unique_id=2124680497]
+[node name="Save" type="Button" parent="Main UI/Tabs/Context Menu" unique_id=2124680497]
 layout_mode = 0
 offset_left = 86.0
 offset_top = 2.0
 offset_right = 126.0
 offset_bottom = 42.0
+disabled = true
 icon = SubResource("AtlasTexture_272bh")
 
-[node name="Options" type="Panel" parent="Tabs" unique_id=1474110500]
+[node name="Options" type="Panel" parent="Main UI/Tabs" unique_id=1474110500]
 texture_filter = 1
 offset_left = 90.0
 offset_top = 41.0
 offset_right = 253.0
 offset_bottom = 81.0
 
-[node name="Dark Mode" type="Button" parent="Tabs/Options" unique_id=1500458105]
+[node name="Dark Mode" type="Button" parent="Main UI/Tabs/Options" unique_id=1500458105]
 layout_mode = 0
 offset_right = 8.0
 offset_bottom = 8.0
@@ -128,15 +139,16 @@ disabled = true
 toggle_mode = true
 icon = SubResource("AtlasTexture_0xm2m")
 
-[node name="Background" type="Button" parent="Tabs/Options" unique_id=776487630]
+[node name="Background" type="Button" parent="Main UI/Tabs/Options" unique_id=776487630]
 layout_mode = 0
 offset_left = 41.0
 offset_right = 81.0
 offset_bottom = 40.0
 toggle_mode = true
 icon = SubResource("AtlasTexture_5vw27")
+script = ExtResource("4_a5os8")
 
-[node name="Color" type="ColorRect" parent="Tabs/Options/Background" unique_id=997291949]
+[node name="Color" type="ColorRect" parent="Main UI/Tabs/Options/Background" unique_id=997291949]
 layout_mode = 0
 offset_left = 21.0
 offset_top = 16.0
@@ -144,16 +156,25 @@ offset_right = 24.0
 offset_bottom = 19.0
 color = Color(0, 0, 0, 1)
 
-[node name="Settings" type="Button" parent="Tabs/Options" unique_id=1225488732]
+[node name="Color Picker" parent="Main UI/Tabs/Options/Background" unique_id=26907492 node_paths=PackedStringArray("_targeted_control") instance=ExtResource("5_5rhg1")]
+layout_mode = 1
+offset_left = -17.0
+offset_top = 168.0
+offset_right = -17.0
+offset_bottom = 168.0
+_targeted_control = NodePath("../Color")
+
+[node name="Settings" type="Button" parent="Main UI/Tabs/Options" unique_id=1225488732]
 layout_mode = 0
 offset_left = 82.0
 offset_right = 122.0
 offset_bottom = 40.0
 icon = SubResource("AtlasTexture_kek77")
 
-[node name="About" type="Button" parent="Tabs/Options" unique_id=1256406660]
+[node name="About" type="Button" parent="Main UI/Tabs/Options" unique_id=1256406660]
 layout_mode = 0
 offset_left = 123.0
 offset_right = 163.0
 offset_bottom = 40.0
+disabled = true
 icon = SubResource("AtlasTexture_4c57u")

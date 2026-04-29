@@ -20,10 +20,18 @@ extras/using_desktop=false
 extras/using_desktop.pc=true
 extras/using_desktop.web=true
 
+[autoload]
+
+main="*uid://c73nyg7247kva"
+
 [display]
 
 window/handheld/orientation=1
 mouse_cursor/custom_image="uid://bk6b08pw0fhtv"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/jts_colorpickerkit/plugin.cfg")
 
 [physics]
 
