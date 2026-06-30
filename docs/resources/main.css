@@ -1,0 +1,15 @@
+@font-face {
+	font-family: "SonicHUD";
+	src: url("https://raw.githubusercontent.com/Juani12ok/Juani12ok/refs/heads/main/docs/fonts/sonic-name-hud-v4.ttf");
+}
+
+body { background: url("https://raw.githubusercontent.com/Eukaryot/sonic3air/refs/heads/main/Oxygen/sonic3air/data/images/backdrop/classic1.png"); }
+
+cons { font-family: "SonicHUD"; font-size: xx-small; }
+.setToWhite { color: #FFFFFF; }
+.setToYellow { color: #FFFF00; }
+.setToRed { color: #FF0000; }
+.setToGreen { color: #00FF00; }
+.setToGray { color: #AEAEAE; }
+.setToOrange { color: #FF8A00; }
+.setToCyan { color: #009B9B; }
